@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/Скрипты async, defer.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- <p>...Содержимое перед скриптом...</p>
+	<script src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+	<script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+	<p>...Содержимое после скриптом...</p> -->
+	<!-- 
+	<p>...Содержимое перед скриптом...</p>
+	<script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+	<p>...Содержимое после скриптом...</p> -->
+
+	<p>...содержимое перед скриптами...</p>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => alert("DOM готов!"));
+	</script>
+
+	<script async src="https://javascript.info/article/script-async-defer/long.js"></script>
+	<script async src="https://javascript.info/article/script-async-defer/small.js"></script>
+
+	<p>...содержимое после скриптов...</p>
+
+	<script src="js/Скрипты async, defer.js"></script>
+</body>
+
+</html>

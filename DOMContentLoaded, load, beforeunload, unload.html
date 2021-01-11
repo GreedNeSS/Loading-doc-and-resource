@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/DCL, load, beforeunload, unload.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- <img src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" alt="" id="img"> -->
+
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", () => {
+			alert("DOM готов!");
+		});
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+
+	<script>
+		alert("Библиотека загружена, встроенный скрипт выполнен");
+	</script> -->
+
+	<div id="events"></div>
+
+	<script>
+		function log(txt) {
+			events.insertAdjacentHTML('beforeend', `<div>[${Math.floor(performance.now())}] ${txt}</div>`);
+		}
+
+		log('initial readyState:' + document.readyState);
+
+		document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
+		document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
+
+		window.onload = () => log('window onload');
+	</script>
+
+	<iframe src="iframe.html?speed=1&cache=0" style="visibility:hidden" onload="log('iframe onload')"></iframe>
+
+	<img src="http://en.js.cx/clipart/train.gif?speed=1&cache=0" id="img" style="position:absolute;right:0;top:0">
+	<script>
+		img.onload = () => log('img onload');
+	</script>
+
+	<script src="js/DCL, load, beforeunload, unload.js"></script>
+</body>
+
+</html>
